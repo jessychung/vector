@@ -1,0 +1,187 @@
+/*
+Theme Name: Vectorleap
+Theme URI:
+Author: Thentia
+Author URI:
+Description: Thentia Vectorleap Theme
+Version: 1.0
+License: Commercial License
+License URI:
+Tags: black, brown, orange, tan, white, yellow, light, one-column, two-columns, right-sidebar, flexible-width, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, translation-ready
+Text Domain: vectorleap
+*/
+
+$red: #e03a2c;
+$head: #2b3140;
+$copy: #56626d;
+$grey: #d3dbe0;
+
+body, html {
+  font-family: 'Cabin', sans-serif !important;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: lighten($red, 40%);
+}
+::-moz-selection {
+  background: lighten($red, 40%);
+}
+
+img { pointer-events: none;
+}
+
+ul {
+  list-style-type: none;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+a:hover {
+  text-decoration: none !important;
+  cursor: pointer;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1040px !important;
+  }
+}
+
+.row.is-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.row.is-flex > [class*='col-'] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn {
+  border-radius: 3px !important;
+}
+
+.btn-brand {
+  background-color: $red !important;
+  color: #fff;
+  border-bottom: 3px solid darken($red, 10%) !important;
+  padding: 9px 25px !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+}
+
+.btn-light {
+  background-color: transparent !important;
+  border: 1px solid $red !important;
+  color: $red;
+  padding: 9px 25px !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+}
+
+h1 {
+  font-size: 41px;
+  color: $head;
+}
+
+h2 {
+  font-family: "proxima-nova", sans-serif !important;
+  color: $grey !important;
+  text-transform: uppercase;
+  font-weight: 700 !important;
+  font-size: 13px !important;
+}
+
+p {
+  color: $copy;
+  font-family: "proxima-nova", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+//header
+
+.vl-logo-bar {
+  padding: 35px 0;
+  z-index: 100;
+  position: relative;
+  .menu-main-menu-container {
+    display: inline-block;
+  }
+  ul {
+    color: #fff;
+    li {
+      display: inline-block;
+      padding: 0 15px;
+      a {
+        color: #fff;
+        font-size: 16px;
+        font-weight: 600;
+      }
+    }
+  }
+  .vl-contact-us {
+    border: 1px solid #fff;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 9px 25px !important;
+  }
+}
+
+//front page
+
+.vl-bg-cube-one {
+  position: absolute;
+  right: -127px;
+  top: -236px;
+  z-index: 1;
+}
+
+.vl-bg-cube-two {
+  position: absolute;
+  z-index: -1;
+  left: -300px;
+}
+
+.vl-homepage-jumbotron {
+  margin-top: 30px;
+  h1 {
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-size: 41px;
+    color: $head;
+  }
+  .vl-mock-demo {
+    z-index: 10;
+  }
+}
+
+.vl-homepage-features {
+  margin-top: 100px;
+  .vl-homepage-features-container {
+    background-color: #fff;
+    text-align: center;
+    box-shadow: 0 0px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
+    padding: 60px 30px;
+    h1 {
+      font-size: 33px;
+      margin-top: 0;
+      margin-bottom: 25px;
+    }
+    h2 {
+      margin-top: 0;
+    }
+    p {
+      max-width: 530px;
+      margin: 0 auto;
+    }
+  }
+}
