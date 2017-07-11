@@ -51,42 +51,71 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-
+                    <div class="vl-footer-cta-container">
+                        <?php
+                        $query = new WP_Query('category_name=footer-cta');
+                        if ($query->have_posts()) {
+                            while ( $query->have_posts() ) : $query->the_post(); ?>
+                                <h1><?php the_title(); ?></h1>
+                                <?php the_content(); ?>
+                                <input type="text" class="vl-input-left" placeholder="Your Email">
+                                <button type="button" class="btn btn-brand vl-input-right">Count me in</button>
+                            <?php endwhile; }?>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="button-box up"><div class="down-button"><i class="fa fa-chevron-up"></i></div></div>
-    <div class="newsletter-bar">
-        <div class="container">
-            <p>Subscribe to recieve updates!</p>
-            <input type="text" placeholder="Your Email">
-            <button type="button">Subscribe</button>
-        </div>
-    </div>
-    <div class="footer-bar">
+    <div class="vl-footer-links">
         <div class="container">
             <div class="row">
-            <div class="col-md-8 col-xs-12">
-                <?php
-                $defaults = array(
-                    'menu'            => 'footer',
-                    'container'       => '',
-                    'menu_class'      => 'menu',
-                    'echo'            => true,
-                    'fallback_cb'     => 'wp_page_menu',
-                    'items_wrap'      => '<li>%3$s</li>',
-                    'depth'           => 0
-                );
+                <div class="col-md-3">
+                    <?php
+                    $defaults = array(
+                        'menu'            => 'footer',
+                        'container'       => '',
+                        'menu_class'      => 'menu',
+                        'echo'            => true,
+                        'fallback_cb'     => 'wp_page_menu',
+                        'items_wrap'      => '<li>%3$s</li>',
+                        'depth'           => 0
+                    );
 
-                wp_nav_menu( $defaults );
+                    wp_nav_menu( $defaults );
 
-                ?>
-            </div>
-            <div class="col-md-4 col-xs-12"><p>© <?php echo date('Y'); ?> Vectorleap. All Rights Reserved.</p></div>
+                    ?>
+                </div>
+                <div class="col-md-3">
+                    <h1>Follow Us</h1>
+                    <div class="vl-social">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                    </div>
+                    <div class="vl-social">
+                        <i class="fa fa-linkedin" aria-hidden="true"></i>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
+    <div class="vl-footer-copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="vl-copyright">
+                        <div class="thentia-family">
+                            <p>Part of the</p>
+                            <img src="<?php echo content_url (); ?>/uploads/2017/07/vl_thentia.png" />
+                            <p>Family</p>
+                        </div>
+                        <p>Copyright © <?php echo date('Y'); ?> Thentia Global Systems Inc. <br/>
+                            All Rights Reserved. Vectorleap is a trademark of Thentia Global Systems Inc.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </footer>
 </html>

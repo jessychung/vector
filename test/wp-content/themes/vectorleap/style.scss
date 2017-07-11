@@ -280,4 +280,73 @@ p {
 
 footer {
   background-color: #2b3138;
+  .vl-footer-cta {
+    .vl-footer-cta-container {
+      background-color: #fff;
+      text-align: center;
+      box-shadow: 0 0px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
+      padding: 60px 30px;
+      margin-top: -80px;
+      h1 {
+        font-size: 30px;
+        margin-bottom: 15px;
+      }
+      .vl-input-left {
+        background-color: #f2f2f2;
+        border-bottom: 3px solid #e6e6e6;
+      }
+    }
+  }
+  .vl-footer-links {
+    padding-bottom: 50px;
+
+    h1 {
+      color: #fff;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    .vl-social {
+      border: 1px solid #fff;
+      border-radius: 100px;
+      text-align: center;
+      width: 26px;
+      height: 26px;
+      line-height: 26px;
+      display: inline-block;
+      opacity: .6;
+      transition: all .3s;
+      &:hover {
+        opacity: 1;
+        cursor: pointer;
+      }
+      &:first-of-type {
+        margin-right: 5px;
+      }
+      i {
+        color: #fff;
+        font-size: 13px;
+      }
+    }
+  }
+  .vl-footer-copyright {
+    text-align: center;
+    .vl-copyright {
+      padding: 40px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      p {
+        color: #fff;
+        font-size: 13px;
+        font-weight: 400;
+        opacity: .5;
+      }
+      .thentia-family {
+        >* {
+          display: inline-block;
+        }
+        p {
+          opacity: 1;
+        }
+      }
+    }
+  }
 }
