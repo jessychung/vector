@@ -1,5 +1,10 @@
 <?php wp_footer(); ?>
 </body>
+<script>
+    $('#myCarousel').carousel({
+        interval: false
+    });
+</script>
 <footer>
     <div class="button-box up"><div class="down-button"><i class="fa fa-chevron-up"></i></div></div>
     <div class="newsletter-bar">
