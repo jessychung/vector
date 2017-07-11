@@ -38,5 +38,16 @@ function my_custom_post_product() {
     );
     register_post_type( 'Features Summary', $args );
 
+    $args = array(
+        'label'        => 'Clients',
+        'description'   => 'List of Clients',
+        'public'        => true,
+        'menu_position' => 5,
+        'taxonomies'    => array('post_tag'),
+        'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt', 'custom-fields' ),
+        'has_archive'   => true,
+    );
+    register_post_type( 'Clients', $args );
+
 }
 add_action( 'init', 'my_custom_post_product' );

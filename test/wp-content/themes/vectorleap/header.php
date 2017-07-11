@@ -13,6 +13,7 @@
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
     <link href="<?php bloginfo('stylesheet_url');?>" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Cabin:500,600" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel='shortcut icon' href='<?php echo content_url (); ?>/uploads/2017/07/VectorLeap_fav.png'>
 
@@ -22,12 +23,32 @@
 
     <!--Scripts-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.0/vivus.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <?php if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
     <?php wp_head(); ?>
 </head>
 
-<body>
+<body class="stop-scrolling">
+
+<!--loading icon-->
+
+<div class="vl-loading">
+    <div class="vl-loading-container">
+        <div class="vl-ring">
+            <object type="image/svg+xml" data="<?php echo content_url (); ?>/uploads/2017/07//vl_ring_animated.svg"  width="70px"></object>
+        </div>
+
+        <div class="vl-logo-animation">
+            <img class="vl-logo-piece animated" src="<?php echo content_url (); ?>/uploads/2017/07/vl_five-01.svg" width="50px">
+            <img class="vl-logo-piece animated" src="<?php echo content_url (); ?>/uploads/2017/07/vl_four-01.svg" width="50px">
+            <img class="vl-logo-piece animated" src="<?php echo content_url (); ?>/uploads/2017/07/vl_three-01.svg" width="50px">
+            <img class="vl-logo-piece animated" src="<?php echo content_url (); ?>/uploads/2017/07/vl_two-01.svg" width="50px">
+            <img class="vl-logo-piece animated" src="<?php echo content_url (); ?>/uploads/2017/07/vl_one-01.svg" width="50px">
+        </div>
+
+    </div>
+</div>
 
 <div id="mobile-menu" class="hidden-sm hidden-md hidden-lg">
     <i class="fa fa-times" id="exit-icon"></i>

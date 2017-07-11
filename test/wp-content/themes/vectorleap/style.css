@@ -92,6 +92,40 @@ p {
 .carousel-control.left {
   background-image: none !important; }
 
+.stop-scrolling {
+  overflow: hidden !important;
+  position: fixed; }
+
+.vl-loading {
+  background-color: #fff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10000; }
+  .vl-loading .vl-loading-container {
+    position: relative; }
+    .vl-loading .vl-loading-container .vl-logo-piece {
+      position: absolute;
+      left: 11px;
+      top: 9px; }
+
 .vl-logo-bar {
   padding: 35px 0;
   z-index: 100;
@@ -163,7 +197,18 @@ p {
 
 .vl-homepage-features-summary .vl-features-summary-single {
   margin: 80px 0; }
+  .vl-homepage-features-summary .vl-features-summary-single.even img {
+    margin-right: -500px; }
+  .vl-homepage-features-summary .vl-features-summary-single.odd img {
+    margin-left: -500px; }
   .vl-homepage-features-summary .vl-features-summary-single img {
-    max-width: 600px;
-    height: auto;
+    height: 480px;
+    width: auto;
     box-shadow: 0 0px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07); }
+
+.vl-clients .vl-clients-container {
+  border-top: 1px solid #e6e6e6;
+  text-align: center; }
+
+footer {
+  background-color: #2b3138; }

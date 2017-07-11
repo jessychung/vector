@@ -112,7 +112,7 @@
 
                 <?php if($i % 2) { ?>
 
-                    <div class="vl-features-summary-single row is-flex">
+                    <div class="vl-features-summary-single even row is-flex">
 
                         <div class="col-md-6">
                             <div class="vl-flex-container">
@@ -127,7 +127,7 @@
                     </div>
 
                 <?php } else { ?>
-                    <div class="vl-features-summary-single row is-flex">
+                    <div class="vl-features-summary-single odd row is-flex">
                         <div class="col-md-6">
                             <?php the_post_thumbnail(); ?>
                         </div>
@@ -143,6 +143,27 @@
                 <?php }?>
 
             <?php endwhile; }?>
+    </div>
+</div>
+
+<div class="vl-clients">
+    <div class="vl-clients-container container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Some of our happy customers</h2>
+                <?php
+                $query = new WP_Query(array(
+                    'post_type' => 'Clients',
+                    'posts_per_page' => 4
+                ));
+                $posts = $query->posts;
+                if ($query->have_posts()) {
+                    while ( $query->have_posts() ) : $query->the_post(); ?>
+
+                        <?php the_post_thumbnail(); ?>
+                    <?php endwhile; }?>
+            </div>
+        </div>
     </div>
 </div>
 
