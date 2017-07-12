@@ -56,21 +56,31 @@ a:hover {
 .btn-brand {
   background-color: #e03a2c !important;
   color: #fff;
-  border-bottom: 3px solid #bd281c !important;
+  box-shadow: 0 3px 0 0 #bd281c;
   padding: 9px 25px !important;
-  font-size: 18px !important;
-  font-weight: 700 !important; }
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  transition: all .3s; }
+  .btn-brand:hover {
+    -webkit-transform: translateY(2px);
+    transform: translateY(2px);
+    box-shadow: 0 5px 0 0 #bd281c;
+    transition: all .3s;
+    color: #fff !important; }
 
 .btn-light {
   background-color: transparent !important;
   border: 1px solid #e03a2c !important;
   color: #e03a2c;
   padding: 9px 25px !important;
-  font-size: 18px !important;
-  font-weight: 700 !important; }
+  font-size: 16px !important;
+  font-weight: 500 !important; }
+  .btn-light:hover {
+    color: #e03a2c !important; }
 
 h1 {
   font-size: 41px;
+  font-weight: 600 !important;
   color: #2b3140; }
 
 h2 {
@@ -127,49 +137,64 @@ p {
       top: 9px; }
 
 .vl-logo-bar {
-  padding: 35px 0;
+  padding: 50px 0;
   z-index: 100;
-  position: relative; }
-  .vl-logo-bar .menu-main-menu-container {
-    display: inline-block; }
-  .vl-logo-bar ul {
-    color: #fff; }
-    .vl-logo-bar ul li {
+  position: fixed;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0);
+  box-shadow: 0px 3px 15px rgba(255, 255, 255, 0); }
+  .vl-logo-bar .vl-main-menu-container {
+    margin-top: 8px;
+    text-align: right; }
+    .vl-logo-bar .vl-main-menu-container .menu-main-menu-container {
+      display: inline-block; }
+    .vl-logo-bar .vl-main-menu-container ul {
+      color: #fff; }
+      .vl-logo-bar .vl-main-menu-container ul li {
+        display: inline-block;
+        padding: 0 15px; }
+        .vl-logo-bar .vl-main-menu-container ul li a {
+          color: #fff;
+          font-size: 16px;
+          font-weight: 600; }
+    .vl-logo-bar .vl-main-menu-container .vl-contact-us {
+      border: 1px solid #fff;
+      border-radius: 3px;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 9px 25px !important;
       display: inline-block;
-      padding: 0 15px; }
-      .vl-logo-bar ul li a {
-        color: #fff;
-        font-size: 16px;
-        font-weight: 600; }
-  .vl-logo-bar .vl-contact-us {
-    border: 1px solid #fff;
-    border-radius: 3px;
-    color: #fff;
-    font-size: 16px;
-    font-weight: 600;
-    padding: 9px 25px !important; }
+      background-color: rgba(224, 58, 44, 0); }
 
 .vl-bg-cube-one {
   position: absolute;
   right: -127px;
-  top: -236px;
-  z-index: 1; }
+  top: -180px;
+  z-index: 1;
+  pointer-events: none; }
 
 .vl-bg-cube-two {
   position: absolute;
   z-index: -1;
   left: -300px;
-  margin-top: -150px; }
+  margin-top: -180px;
+  pointer-events: none; }
 
 .vl-homepage-jumbotron {
-  margin-top: 30px; }
+  padding: 88px 0; }
   .vl-homepage-jumbotron h1 {
     margin-top: 0;
     margin-bottom: 30px;
     font-size: 41px;
     color: #2b3140; }
+  .vl-homepage-jumbotron .vl-flex-container a:first-of-type {
+    margin-right: 10px; }
   .vl-homepage-jumbotron .vl-mock-demo {
-    z-index: 10; }
+    z-index: 10;
+    position: absolute;
+    width: 650px;
+    left: 0; }
 
 .vl-homepage-features {
   margin-top: 100px; }
@@ -179,7 +204,7 @@ p {
     box-shadow: 0 0px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
     padding: 60px 30px; }
     .vl-homepage-features .vl-homepage-features-container h1 {
-      font-size: 33px;
+      font-size: 28px;
       margin-top: 0;
       margin-bottom: 25px; }
     .vl-homepage-features .vl-homepage-features-container h2 {
@@ -205,6 +230,8 @@ p {
     height: 480px;
     width: auto;
     box-shadow: 0 0px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07); }
+  .vl-homepage-features-summary .vl-features-summary-single h1 {
+    font-size: 28px; }
 
 .vl-clients .vl-clients-container {
   border-top: 1px solid #e6e6e6;
@@ -220,16 +247,56 @@ footer {
     margin-top: -80px; }
     footer .vl-footer-cta .vl-footer-cta-container h1 {
       font-size: 30px;
-      margin-bottom: 15px; }
+      margin-bottom: 15px;
+      margin-top: 0; }
+    footer .vl-footer-cta .vl-footer-cta-container p {
+      margin-bottom: 20px; }
     footer .vl-footer-cta .vl-footer-cta-container .vl-input-left {
       background-color: #f2f2f2;
-      border-bottom: 3px solid #e6e6e6; }
+      border: 0px;
+      border-bottom: 3px solid #e6e6e6;
+      height: 40px;
+      line-height: 40px;
+      font-size: 15px;
+      border-top-left-radius: 3px;
+      border-bottom-left-radius: 3px;
+      width: 200px;
+      max-width: 100%;
+      padding: 0 15px; }
+    footer .vl-footer-cta .vl-footer-cta-container .vl-input-right {
+      height: 40px;
+      font-size: 16px !important;
+      border-top-left-radius: 0 !important;
+      border-bottom-left-radius: 0 !important;
+      margin-left: -3px; }
   footer .vl-footer-links {
-    padding-bottom: 50px; }
+    padding-bottom: 30px;
+    padding-top: 20px; }
     footer .vl-footer-links h1 {
       color: #fff;
       font-size: 16px;
       margin-bottom: 20px; }
+    footer .vl-footer-links ul .footer-title {
+      margin-bottom: 20px;
+      margin-top: 20px; }
+      footer .vl-footer-links ul .footer-title a {
+        color: #fff;
+        font-size: 16px;
+        pointer-events: none; }
+    footer .vl-footer-links ul li:not(:first-child) {
+      margin-bottom: 5px; }
+      footer .vl-footer-links ul li:not(:first-child) a {
+        color: #fff;
+        font-family: "proxima-nova", sans-serif;
+        font-weight: 300;
+        font-size: 15px;
+        opacity: .6;
+        transition: all .3s; }
+        footer .vl-footer-links ul li:not(:first-child) a:hover {
+          transition: all .3s;
+          opacity: 1; }
+      footer .vl-footer-links ul li:not(:first-child):last-child {
+        margin-bottom: 0; }
     footer .vl-footer-links .vl-social {
       border: 1px solid #fff;
       border-radius: 100px;
@@ -241,6 +308,7 @@ footer {
       opacity: .6;
       transition: all .3s; }
       footer .vl-footer-links .vl-social:hover {
+        transition: all .3s;
         opacity: 1;
         cursor: pointer; }
       footer .vl-footer-links .vl-social:first-of-type {

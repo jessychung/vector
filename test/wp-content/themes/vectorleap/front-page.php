@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row is-flex">
             <div class="vl-bg-cube-one hidden-xs hidden-sm">
-                <img class="vl-cube-one" src="<?php echo content_url (); ?>/uploads/2017/07/vl-cube-1.svg" width="800px"/>
+                <img class="vl-cube-one" src="<?php echo content_url (); ?>/uploads/2017/07/vl-cube-1.svg" width="850px"/>
             </div>
             <div class="col-md-6">
                 <div class="vl-flex-container">

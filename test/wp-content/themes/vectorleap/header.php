@@ -22,11 +22,14 @@
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
 
     <!--Scripts-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://use.fontawesome.com/ca8e0550f7.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.0/vivus.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.min.js"></script>
+
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <?php if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
     <?php wp_head(); ?>
@@ -73,16 +76,19 @@
     </ul>
 </div>
 
-
+<script>
+    // init controller
+    var controller = new ScrollMagic.Controller();
+</script>
 
 <!--logo-bar-->
-<div class="vl-logo-bar">
+<div class="vl-logo-bar" id="animate1">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-6">
                 <a href="<?php home_url()?>"><img src="<?php echo content_url (); ?>/uploads/2017/07/vl-logo.svg" width="193px" height="62px" style="margin-left: -5px"></a>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-6" style="text-align: right">
+            <div class="vl-main-menu-container col-lg-6 col-md-6 col-sm-6">
 
                 <?php
                 $defaults = array(
@@ -96,10 +102,27 @@
                 wp_nav_menu( $defaults );
 
                 ?>
-                <a href="" class="vl-contact-us">Contact</a>
+                <a href="" class="vl-contact-us" id="animate2">Contact</a>
 
             </div>
 
         </div>
     </div>
 </div>
+
+<div style="padding: 100px"></div>
+
+<script>
+    // build scene
+    var sceneOne = new ScrollMagic.Scene({
+        duration: 150
+    })
+        .setTween("#animate1", 1, {backgroundColor: "rgba(255, 255, 255, 1)", paddingTop: "10px", paddingBottom: "10px", color: "#333", className:"+=fixedmenu", boxShadow: "0px 3px 5px rgba(50, 50, 93, 0.1)"})
+        .addTo(controller);
+
+    var sceneTwo = new ScrollMagic.Scene({
+        duration: 150
+    })
+        .setTween("#animate2", 1, {backgroundColor: "#e03a2c", boxShadow: "0 3px 0 0 #bd281c", border: "1px solid #e03a2c"})
+        .addTo(controller);
+</script>

@@ -5,7 +5,7 @@
         interval: false
     });
 
-    $(window).load(function () {
+    $(window).on('load', function () {
         $('.vl-loading .vl-loading-container').delay(800).fadeOut();
         $('body').removeClass('stop-scrolling');
         $('.vl-loading').delay(1500).fadeOut(1000);
@@ -70,15 +70,14 @@
     <div class="vl-footer-links">
         <div class="container">
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-2">
                     <?php
                     $defaults = array(
-                        'menu'            => 'footer',
+                        'menu'            => 'footer-1',
                         'container'       => '',
                         'menu_class'      => 'menu',
                         'echo'            => true,
                         'fallback_cb'     => 'wp_page_menu',
-                        'items_wrap'      => '<li>%3$s</li>',
                         'depth'           => 0
                     );
 
@@ -86,7 +85,37 @@
 
                     ?>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-2">
+                    <?php
+                    $defaults = array(
+                        'menu'            => 'footer-2',
+                        'container'       => '',
+                        'menu_class'      => 'menu',
+                        'echo'            => true,
+                        'fallback_cb'     => 'wp_page_menu',
+                        'depth'           => 0
+                    );
+
+                    wp_nav_menu( $defaults );
+
+                    ?>
+                </div>
+                <div class="col-md-2">
+                    <?php
+                    $defaults = array(
+                        'menu'            => 'footer-3',
+                        'container'       => '',
+                        'menu_class'      => 'menu',
+                        'echo'            => true,
+                        'fallback_cb'     => 'wp_page_menu',
+                        'depth'           => 0
+                    );
+
+                    wp_nav_menu( $defaults );
+
+                    ?>
+                </div>
+                <div class="col-md-2">
                     <h1>Follow Us</h1>
                     <div class="vl-social">
                         <i class="fa fa-twitter" aria-hidden="true"></i>
