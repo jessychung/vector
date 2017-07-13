@@ -39,22 +39,22 @@
 
 <!--loading icon-->
 
-<div class="vl-loading">
-    <div class="vl-loading-container">
-        <div class="vl-ring">
-            <object type="image/svg+xml" data="<?php echo content_url (); ?>/uploads/2017/07//vl_ring_animated.svg"  width="70px"></object>
-        </div>
-
-        <div class="vl-logo-animation">
-            <img class="vl-logo-piece animated" src="<?php echo content_url (); ?>/uploads/2017/07/vl_five-01.svg" width="50px">
-            <img class="vl-logo-piece animated" src="<?php echo content_url (); ?>/uploads/2017/07/vl_four-01.svg" width="50px">
-            <img class="vl-logo-piece animated" src="<?php echo content_url (); ?>/uploads/2017/07/vl_three-01.svg" width="50px">
-            <img class="vl-logo-piece animated" src="<?php echo content_url (); ?>/uploads/2017/07/vl_two-01.svg" width="50px">
-            <img class="vl-logo-piece animated" src="<?php echo content_url (); ?>/uploads/2017/07/vl_one-01.svg" width="50px">
-        </div>
-
-    </div>
-</div>
+<!--<div class="vl-loading">-->
+<!--    <div class="vl-loading-container">-->
+<!--        <div class="vl-ring">-->
+<!--            <object type="image/svg+xml" data="--><?php //echo content_url (); ?><!--/uploads/2017/07//vl_ring_animated.svg"  width="70px"></object>-->
+<!--        </div>-->
+<!---->
+<!--        <div class="vl-logo-animation">-->
+<!--            <img class="vl-logo-piece animated" src="--><?php //echo content_url (); ?><!--/uploads/2017/07/vl_five-01.svg" width="50px">-->
+<!--            <img class="vl-logo-piece animated" src="--><?php //echo content_url (); ?><!--/uploads/2017/07/vl_four-01.svg" width="50px">-->
+<!--            <img class="vl-logo-piece animated" src="--><?php //echo content_url (); ?><!--/uploads/2017/07/vl_three-01.svg" width="50px">-->
+<!--            <img class="vl-logo-piece animated" src="--><?php //echo content_url (); ?><!--/uploads/2017/07/vl_two-01.svg" width="50px">-->
+<!--            <img class="vl-logo-piece animated" src="--><?php //echo content_url (); ?><!--/uploads/2017/07/vl_one-01.svg" width="50px">-->
+<!--        </div>-->
+<!---->
+<!--    </div>-->
+<!--</div>-->
 
 <div id="mobile-menu" class="hidden-sm hidden-md hidden-lg">
     <i class="fa fa-times" id="exit-icon"></i>
@@ -88,7 +88,7 @@
             <div class="col-lg-6 col-md-6 col-sm-6">
                 <a href="<?php home_url()?>"><img src="<?php echo content_url (); ?>/uploads/2017/07/vl-logo.svg" width="193px" height="62px" style="margin-left: -5px"></a>
             </div>
-            <div class="vl-main-menu-container col-lg-6 col-md-6 col-sm-6">
+            <div class="vl-main-menu-container col-lg-6 col-md-6 col-sm-6" id="animate3">
 
                 <?php
                 $defaults = array(
@@ -117,12 +117,18 @@
     var sceneOne = new ScrollMagic.Scene({
         duration: 150
     })
-        .setTween("#animate1", 1, {backgroundColor: "rgba(255, 255, 255, 1)", paddingTop: "10px", paddingBottom: "10px", color: "#333", className:"+=fixedmenu", boxShadow: "0px 3px 5px rgba(50, 50, 93, 0.1)"})
+        .setTween("#animate1", 1, {backgroundColor: "rgba(255, 255, 255, 1)", paddingTop: "10px", paddingBottom: "10px", color: "#333", boxShadow: "0px 3px 5px rgba(50, 50, 93, 0.1)"})
         .addTo(controller);
-
+    var sceneThree = new ScrollMagic.Scene({
+        duration: 150
+    })
+        .setTween("#animate3 a", 1, {color: "#333"})
+        .addTo(controller);
     var sceneTwo = new ScrollMagic.Scene({
         duration: 150
     })
-        .setTween("#animate2", 1, {backgroundColor: "#e03a2c", boxShadow: "0 3px 0 0 #bd281c", border: "1px solid #e03a2c"})
+        .setTween("#animate2", 1, {backgroundColor: "#e03a2c", boxShadow: "0 3px 0 0 #bd281c", border: "1px solid #e03a2c", color: "#fff"})
         .addTo(controller);
+
+
 </script>
