@@ -1,9 +1,5 @@
 <?php wp_footer(); ?>
-</body>
 <script>
-    $('#myCarousel').carousel({
-        interval: false
-    });
 
     $(window).on('load', function () {
         $('.vl-loading .vl-loading-container').delay(800).fadeOut();
@@ -11,10 +7,27 @@
         $('.vl-loading').delay(1500).fadeOut(1000);
     });
 
-    $(function () {
+
+    $(document).ready(function () {
+
+        $('#myCarousel').carousel({
+            interval: false
+        });
+
+        $('.carousel .item').each(function () {
+            var next = $(this).next();
+            if (!next.length) {
+                next = $(this).siblings(':first');
+            }
+            next.children(':first-child').clone().appendTo($(this));
+            if (next.next().length > 0) {
+                next.next().children(':first-child').clone().appendTo($(this));
+            } else {
+                $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
+            }
+        });
 
         var vectorleapAnimation = {};
-
 
         vectorleapAnimation.loop = function() {
 
@@ -42,9 +55,10 @@
         });
 
 
-
     });
 </script>
+</body>
+
 <footer>
 
     <div class="vl-footer-cta">

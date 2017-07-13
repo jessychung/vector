@@ -47,6 +47,7 @@
                             <?php the_content(); ?>
                         <?php endwhile; }?>
 
+
                     <div id="myCarousel" class="carousel slide vl-features-slide">
 
                         <div class="carousel-inner">
@@ -59,9 +60,10 @@
                             if ($query->have_posts()) {
                                 while ( $query->have_posts() ) : $query->the_post(); ?>
                                     <div class="item active">
-                                        <?php the_post_thumbnail(); ?>
+                                        <div class="col-lg-4 col-md-4 col-sm-4">
+                                            <?php the_post_thumbnail(); ?>
                                             <h1><?php the_title(); ?></h1>
-
+                                        </div>
                                     </div>
                                 <?php endwhile; }?>
 
@@ -74,23 +76,28 @@
                             if ($query->have_posts()) {
                                 while ( $query->have_posts() ) : $query->the_post(); ?>
                                     <div class="item">
-                                        <?php the_post_thumbnail(); ?>
-                                        <h1><?php the_title(); ?></h1>
-
+                                        <div class="col-lg-4 col-md-4 col-sm-4">
+                                            <?php the_post_thumbnail(); ?>
+                                            <h1><?php the_title(); ?></h1>
+                                        </div>
                                     </div>
                                 <?php endwhile; }?>
                         </div>
 
-                        <!-- Controls -->
-                        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
+                        <div class="vl-carousel-controls">
+                            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                                <i class="fa fa-angle-left" aria-hidden="true"></i>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+
                     </div>
+
+
 
                 </div>
             </div>

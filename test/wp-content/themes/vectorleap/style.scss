@@ -32,7 +32,8 @@ body, html {
   background: lighten($red, 40%);
 }
 
-img { pointer-events: none;
+img {
+  pointer-events: none;
 }
 
 ul {
@@ -52,14 +53,51 @@ a:hover {
   }
 }
 
+.carousel {
+  overflow: hidden;
+}
+
+.carousel-inner {
+  max-width: 700px;
+  margin: 0 auto;
+  margin-bottom: 25px;
+}
+.carousel-inner > .item.next,
+.carousel-inner > .item.active.right {
+  left: 0;
+  -webkit-transform: translate3d(33.33%, 0, 0);
+  transform: translate3d(33.33%, 0, 0);
+}
+.carousel-inner > .item.prev,
+.carousel-inner > .item.active.left {
+  left: 0;
+  -webkit-transform: translate3d(-33.33%, 0, 0);
+  transform: translate3d(-33.33%, 0, 0);
+}
+.carousel-control.left, .carousel-control.right {
+  background: rgba(255, 255, 255, 0.3);
+  width: 25%;
+}
 .row.is-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 .row.is-flex > [class*='col-'] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-align-items: center;
   align-items: center;
+  -webkit-justify-content: center;
   justify-content: center;
 }
 
@@ -112,12 +150,27 @@ h2 {
 
 p {
   color: $copy;
-  font-family: "proxima-nova", sans-serif;
+  font-family: "proxima-nova", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-weight: 300;
   font-size: 16px;
 }
 
-.carousel-control {
+.vl-carousel-controls {
+  width: 120px;
+  position: relative;
+  margin: 0 auto;
+  height: 45px;
+  .carousel-control {
+    background: transparent;
+    border: 1px solid $copy;
+    border-radius: 500px;
+    height: 35px;
+    width: 35px;
+    text-align: center;
+    line-height: 32px;
+    color: $copy;
+    text-shadow: none;
+  }
   &.right {
     background-image: none !important;
   }
@@ -289,8 +342,9 @@ p {
           margin: 0 auto;
         }
         h1 {
-          font-size: 17px;
+          font-size: 16px;
           color: $copy;
+          margin-top: 15px;
         }
       }
     }
