@@ -32,7 +32,7 @@
 
 <div class="vl-homepage-features">
     <div class="container">
-        <div class="row">
+        <div class="row" style="position:relative;">
             <div class="vl-bg-cube-two hidden-xs hidden-sm">
                 <img class="vl-cube-two" src="<?php echo content_url (); ?>/uploads/2017/07/vl-cube-2.svg" width="600px"/>
             </div>
