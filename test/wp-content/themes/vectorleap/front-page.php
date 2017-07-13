@@ -3,7 +3,7 @@
 
 <div class="vl-homepage-jumbotron">
     <div class="container">
-        <div class="row is-flex" style="position: relative">
+        <div class="row-flex row-flex-wrap" style="position: relative">
             <div class="vl-bg-cube-one hidden-xs hidden-sm">
                 <img class="vl-cube-one" src="<?php echo content_url (); ?>/uploads/2017/07/vl-cube-1.svg" width="900px"/>
             </div>
@@ -23,12 +23,11 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <img class="vl-mock-demo" src="<?php echo content_url (); ?>/uploads/2017/07/vl-mock.png" width="100%"/>
+                <img class="vl-mock-demo" src="<?php echo content_url (); ?>/uploads/2017/07/vl-mock.png" width="auto" height="388px"/>
             </div>
         </div>
     </div>
 </div>
-
 
 <div class="vl-homepage-features">
     <div class="container">
@@ -106,6 +105,7 @@
 </div>
 
 
+
 <div class="vl-homepage-features-summary">
     <div class="container">
         <?php
@@ -119,7 +119,7 @@
 
                 <?php if($i % 2) { ?>
 
-                    <div class="vl-features-summary-single even row is-flex">
+                    <div class="vl-features-summary-single even row-flex row-flex-wrap">
 
                         <div class="col-md-6">
                             <div class="vl-flex-container">
@@ -134,7 +134,7 @@
                     </div>
 
                 <?php } else { ?>
-                    <div class="vl-features-summary-single odd row is-flex">
+                    <div class="vl-features-summary-single odd row-flex row-flex-wrap">
                         <div class="col-md-6">
                             <?php the_post_thumbnail(); ?>
                         </div>

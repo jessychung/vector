@@ -64,20 +64,13 @@ a:hover {
   background: rgba(255, 255, 255, 0.3);
   width: 25%; }
 
-.row.is-flex {
+.row-flex, .row-flex > div[class*='col-'] {
   display: -webkit-box;
+  display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap; }
-
-.row.is-flex > [class*='col-'] {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
+  flex: 1 1 auto;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -85,6 +78,29 @@ a:hover {
   align-items: center;
   -webkit-justify-content: center;
   justify-content: center; }
+
+.row-flex-wrap {
+  -webkit-flex-flow: row wrap;
+  align-content: flex-start;
+  flex: 0; }
+
+.row-flex > div[class*='col-'], .container-flex > div[class*='col-'] {
+  margin: -.2px;
+  /* hack adjust for wrapping */ }
+
+.container-flex > div[class*='col-'] div, .row-flex > div[class*='col-'] div {
+  width: 100%; }
+
+.flex-col {
+  display: flex;
+  display: -webkit-flex;
+  flex: 1 100%;
+  flex-flow: column nowrap; }
+
+.flex-grow {
+  display: flex;
+  -webkit-flex: 2;
+  flex: 2; }
 
 .btn {
   border-radius: 3px !important; }
