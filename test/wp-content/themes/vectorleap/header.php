@@ -55,7 +55,7 @@
 <!--    </div>-->
 <!--</div>-->
 
-<div id="mobile-menu" class="hidden-sm hidden-md hidden-lg">
+<div class="vl-mobile-menu visible-xs">
     <i class="fa fa-times" id="exit-icon"></i>
     <ul id="mobile-menuitems">
         <?php

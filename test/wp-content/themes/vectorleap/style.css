@@ -210,6 +210,30 @@ p {
       left: 11px;
       top: 9px; }
 
+.vl-mobile-menu {
+  position: fixed;
+  background-color: #e03a2c;
+  z-index: 9999;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  text-align: center; }
+  .vl-mobile-menu ul {
+    position: absolute;
+    left: 0;
+    right: 0; }
+    .vl-mobile-menu ul li {
+      padding: 7px 0; }
+      .vl-mobile-menu ul li a {
+        color: #fff;
+        font-weight: 600;
+        font-size: 30px;
+        transition: all .3s; }
+        .vl-mobile-menu ul li a:hover {
+          opacity: .5;
+          transition: all .3s; }
+
 .vl-logo-bar {
   padding: 50px 0;
   z-index: 100;
