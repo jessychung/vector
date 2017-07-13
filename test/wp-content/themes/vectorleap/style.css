@@ -40,6 +40,14 @@ a:hover {
   .container {
     width: 1040px !important; } }
 
+@media (min-width: 768px) {
+  .container {
+    width: 100%; } }
+
+@media (max-width: 992px) {
+  .row-flex, .row-flex > div[class*='col-xs-'], .row-flex > div[class*='col-sm-'] {
+    display: block !important; } }
+
 .carousel {
   overflow: hidden; }
 
@@ -64,7 +72,7 @@ a:hover {
   background: rgba(255, 255, 255, 0.3);
   width: 25%; }
 
-.row-flex, .row-flex > div[class*='col-'] {
+.row-flex, .row-flex > div[class*='col-md-'], .row-flex > div[class*='col-lg-'] {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -259,7 +267,6 @@ p {
   .vl-homepage-jumbotron .vl-mock-demo {
     z-index: 10;
     position: absolute;
-    width: 650px;
     left: 0; }
 
 .vl-homepage-features {

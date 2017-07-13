@@ -4,10 +4,10 @@
 <div class="vl-homepage-jumbotron">
     <div class="container">
         <div class="row-flex row-flex-wrap" style="position: relative">
-            <div class="vl-bg-cube-one hidden-xs hidden-sm">
+            <div class="vl-bg-cube-one hidden-xs">
                 <img class="vl-cube-one" src="<?php echo content_url (); ?>/uploads/2017/07/vl-cube-1.svg" width="900px"/>
             </div>
-            <div class="col-md-6">
+            <div class="col-sm-6 col-md-6">
                 <div class="vl-flex-container">
                     <?php
                     $query = new WP_Query('category_name=homepage-slogan');
@@ -22,7 +22,7 @@
                         <?php endwhile; }?>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 hidden-xs hidden-sm">
                 <img class="vl-mock-demo" src="<?php echo content_url (); ?>/uploads/2017/07/vl-mock.png" width="auto" height="388px"/>
             </div>
         </div>
@@ -32,7 +32,7 @@
 <div class="vl-homepage-features">
     <div class="container">
         <div class="row" style="position:relative;">
-            <div class="vl-bg-cube-two hidden-xs hidden-sm">
+            <div class="vl-bg-cube-two hidden-xs">
                 <img class="vl-cube-two" src="<?php echo content_url (); ?>/uploads/2017/07/vl-cube-2.svg" width="600px"/>
             </div>
             <div class="col-lg-12 col-md-12">
