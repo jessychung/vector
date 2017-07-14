@@ -14,6 +14,10 @@
 
             $('.vl-mobile-menu').fadeIn('slow');
 
+            $('.vl-times').find('div').each(function () {
+                $(this).addClass('times');
+            });
+
             $('.vl-mobile-menu .menu li').each(function(i) {
                 var menuItem = $(this);
                 setTimeout(function() {
@@ -26,15 +30,20 @@
         $('.vl-times').on('click', function () {
             $('.vl-mobile-menu').fadeOut();
             $('.vl-mobile-menu .menu li').removeClass('showMobileMenu');
+            $('.vl-times').find('div').each(function () {
+                $(this).removeClass('times');
+            });
         });
 
-        $('#myCarousel').carousel({
+        $('#vl-carousel').carousel({
             interval: false
         });
 
+        $('#vl-carousel-mobile').carousel({
+            interval: false
+        });
 
-
-        $('.carousel .item').each(function () {
+        $('#vl-carousel .carousel .item').each(function () {
             var next = $(this).next();
             if (!next.length) {
                 next = $(this).siblings(':first');
@@ -104,7 +113,7 @@
     <div class="vl-footer-links">
         <div class="container">
             <div class="row">
-                <div class="col-md-2 col-sm-2">
+                <div class="col-md-2 col-sm-2 col-xs-6">
                     <?php
                     $defaults = array(
                         'menu'            => 'footer-1',
@@ -119,7 +128,7 @@
 
                     ?>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-2 col-sm-2 col-xs-6">
                     <?php
                     $defaults = array(
                         'menu'            => 'footer-2',
@@ -134,7 +143,7 @@
 
                     ?>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-2 col-sm-2 col-xs-6">
                     <?php
                     $defaults = array(
                         'menu'            => 'footer-3',
@@ -149,7 +158,7 @@
 
                     ?>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-2 col-sm-2 col-xs-6">
                     <h1>Follow Us</h1>
                     <div class="vl-social">
                         <i class="fa fa-twitter" aria-hidden="true"></i>

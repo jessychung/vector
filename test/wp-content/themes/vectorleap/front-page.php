@@ -4,7 +4,7 @@
 <div class="vl-homepage-jumbotron">
     <div class="container">
         <div class="row-flex row-flex-wrap" style="position: relative">
-            <div class="vl-bg-cube-one hidden-xs">
+            <div class="vl-bg-cube-one">
                 <img class="vl-cube-one" src="<?php echo content_url (); ?>/uploads/2017/07/vl-cube-1.svg" width="900px"/>
             </div>
             <div class="col-sm-6 col-md-6">
@@ -17,7 +17,7 @@
                             <h1><?php the_title(); ?></h1>
 
                             <a href="<?php echo site_url(); ?>/about-us/" class="btn btn-brand">Learn more</a>
-                            <a href="<?php echo site_url(); ?>/about-us/" class="btn btn-light">Contact Us</a>
+                            <a href="<?php echo site_url(); ?>/about-us/" class="btn btn-light hidden-xs">Contact Us</a>
 
                         <?php endwhile; }?>
                 </div>
@@ -32,7 +32,7 @@
 <div class="vl-homepage-features">
     <div class="container">
         <div class="row" style="position:relative;">
-            <div class="vl-bg-cube-two hidden-xs">
+            <div class="vl-bg-cube-two">
                 <img class="vl-cube-two" src="<?php echo content_url (); ?>/uploads/2017/07/vl-cube-2.svg" width="600px"/>
             </div>
             <div class="col-lg-12 col-md-12">
@@ -47,7 +47,7 @@
                         <?php endwhile; }?>
 
 
-                    <div id="myCarousel" class="carousel slide vl-features-slide">
+                    <div id="vl-carousel" class="carousel slide hidden-xs vl-features-slide">
 
                         <div class="carousel-inner">
                             <?php
@@ -59,7 +59,7 @@
                             if ($query->have_posts()) {
                                 while ( $query->have_posts() ) : $query->the_post(); ?>
                                     <div class="item active">
-                                        <div class="col-lg-4 col-md-4 col-sm-4">
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                             <?php the_post_thumbnail(); ?>
                                             <h1><?php the_title(); ?></h1>
                                         </div>
@@ -75,7 +75,7 @@
                             if ($query->have_posts()) {
                                 while ( $query->have_posts() ) : $query->the_post(); ?>
                                     <div class="item">
-                                        <div class="col-lg-4 col-md-4 col-sm-4">
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                             <?php the_post_thumbnail(); ?>
                                             <h1><?php the_title(); ?></h1>
                                         </div>
@@ -84,11 +84,11 @@
                         </div>
 
                         <div class="vl-carousel-controls">
-                            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                            <a class="left carousel-control" href="#vl-carousel" role="button" data-slide="prev">
                                 <i class="fa fa-angle-left" aria-hidden="true"></i>
                                 <span class="sr-only">Previous</span>
                             </a>
-                            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                            <a class="right carousel-control" href="#vl-carousel" role="button" data-slide="next">
                                 <i class="fa fa-angle-right" aria-hidden="true"></i>
                                 <span class="sr-only">Next</span>
                             </a>
@@ -96,7 +96,54 @@
 
                     </div>
 
+                    <div id="vl-carousel-mobile" class="carousel slide visible-xs vl-features-slide">
 
+                        <div class="carousel-inner">
+                            <?php
+                            $query = new WP_Query(array(
+                                'post_type' => 'Features Icon',
+                                'posts_per_page' => 1
+                            ));
+                            $posts = $query->posts;
+                            if ($query->have_posts()) {
+                                while ( $query->have_posts() ) : $query->the_post(); ?>
+                                    <div class="item active">
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                            <?php the_post_thumbnail(); ?>
+                                            <h1><?php the_title(); ?></h1>
+                                        </div>
+                                    </div>
+                                <?php endwhile; }?>
+
+                            <?php
+                            $query = new WP_Query(array(
+                                'post_type' => 'Features Icon',
+                                'offset' => 1
+                            ));
+                            $posts = $query->posts;
+                            if ($query->have_posts()) {
+                                while ( $query->have_posts() ) : $query->the_post(); ?>
+                                    <div class="item">
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                            <?php the_post_thumbnail(); ?>
+                                            <h1><?php the_title(); ?></h1>
+                                        </div>
+                                    </div>
+                                <?php endwhile; }?>
+                        </div>
+
+                        <div class="vl-carousel-controls">
+                            <a class="left carousel-control" href="#vl-carousel-mobile" role="button" data-slide="prev">
+                                <i class="fa fa-angle-left" aria-hidden="true"></i>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="right carousel-control" href="#vl-carousel-mobile" role="button" data-slide="next">
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+
+                    </div>
 
                 </div>
             </div>

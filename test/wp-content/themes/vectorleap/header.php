@@ -63,7 +63,7 @@
 
     <?php
     $defaults = array(
-        'menu'            => 'main-menu',
+        'menu'            => 'mobile-menu',
         'container'       => '',
         'menu_class'      => 'menu',
         'echo'            => true,
@@ -74,7 +74,6 @@
     wp_nav_menu( $defaults );
 
     ?>
-
 </div>
 
 <div class="vl-mobile-logo-bar visible-xs" id="animateM1">
@@ -93,6 +92,7 @@
 
         </div>
     </div>
+
 </div>
 
 <script>
