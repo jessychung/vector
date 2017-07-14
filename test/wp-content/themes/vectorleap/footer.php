@@ -43,7 +43,7 @@
             interval: false
         });
 
-        $('#vl-carousel .carousel .item').each(function () {
+        $('.carousel .item').each(function () {
             var next = $(this).next();
             if (!next.length) {
                 next = $(this).siblings(':first');

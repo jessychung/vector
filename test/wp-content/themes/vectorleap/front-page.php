@@ -22,7 +22,7 @@
                         <?php endwhile; }?>
                 </div>
             </div>
-            <div class="col-md-6 hidden-xs hidden-sm">
+            <div class="col-sm-6 col-md-6 hidden-xs">
                 <img class="vl-mock-demo" src="<?php echo content_url (); ?>/uploads/2017/07/vl-mock.png" width="auto" height="388px"/>
             </div>
         </div>
