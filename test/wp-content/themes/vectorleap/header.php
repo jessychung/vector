@@ -55,24 +55,44 @@
 <!--    </div>-->
 <!--</div>-->
 
-<div class="vl-mobile-menu visible-xs">
-    <i class="fa fa-times" id="exit-icon"></i>
-    <ul id="mobile-menuitems">
-        <?php
-        $defaults = array(
-            'menu'            => 'main-menu',
-            'container'       => '',
-            'menu_class'      => 'menu',
-            'echo'            => true,
-            'fallback_cb'     => 'wp_page_menu',
-            'items_wrap'      => '<li>%3$s</li>',
-            'depth'           => 0
-        );
+<div class="vl-mobile-menu hidden-sm hidden-md hidden-lg">
+    <div class="vl-times">
+        <div></div>
+        <div></div>
+    </div>
 
-        wp_nav_menu( $defaults );
+    <?php
+    $defaults = array(
+        'menu'            => 'main-menu',
+        'container'       => '',
+        'menu_class'      => 'menu',
+        'echo'            => true,
+        'fallback_cb'     => 'wp_page_menu',
+        'depth'           => 0
+    );
 
-        ?>
-    </ul>
+    wp_nav_menu( $defaults );
+
+    ?>
+
+</div>
+
+<div class="vl-mobile-logo-bar visible-xs" id="animateM1">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-6">
+                <a href="<?php home_url()?>"><img id="animate4" src="<?php echo content_url (); ?>/uploads/2017/07/vl-logo.svg" width="180px" height="100%" style="margin-left: -5px"></a>
+            </div>
+            <div class="col-xs-6 visible-xs" style="text-align: right">
+                <div class="vl-hamburger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </div>
 
 <script>
@@ -80,11 +100,10 @@
     var controller = new ScrollMagic.Controller();
 </script>
 
-<!--logo-bar-->
-<div class="vl-logo-bar" id="animate1">
+<div class="vl-logo-bar hidden-xs" id="animate1">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-6">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                 <a href="<?php home_url()?>"><img id="animate4" src="<?php echo content_url (); ?>/uploads/2017/07/vl-logo.svg" width="230px" height="100%" style="margin-left: -5px"></a>
             </div>
             <div class="vl-main-menu-container col-lg-6 col-md-6 col-sm-6">
@@ -105,12 +124,11 @@
                 <a href="" class="vl-contact-us" id="animate2">Contact</a>
 
             </div>
-
         </div>
     </div>
 </div>
 
-<div style="padding: 100px"></div>
+<div style="padding: 100px" class="hidden-xs"></div>
 
 <script>
 
@@ -136,6 +154,12 @@
         duration: 150
     })
         .setTween("#animate4", 1, {width: "180px"})
+        .addTo(controller);
+
+    var sceneMone = new ScrollMagic.Scene({
+        duration: 150
+    })
+        .setTween("#animateM1", 1, {backgroundColor: "rgba(255, 255, 255, 1)", paddingTop: "10px", paddingBottom: "10px", color: "#333", boxShadow: "0px 3px 5px rgba(50, 50, 93, 0.1)"})
         .addTo(controller);
 </script>
 

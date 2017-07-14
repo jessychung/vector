@@ -10,9 +10,29 @@
 
     $(document).ready(function () {
 
+        $('.vl-hamburger').on('click', function () {
+
+            $('.vl-mobile-menu').fadeIn('slow');
+
+            $('.vl-mobile-menu .menu li').each(function(i) {
+                var menuItem = $(this);
+                setTimeout(function() {
+                    menuItem.addClass('showMobileMenu');
+                },  i*200);
+            });
+
+        });
+
+        $('.vl-times').on('click', function () {
+            $('.vl-mobile-menu').fadeOut();
+            $('.vl-mobile-menu .menu li').removeClass('showMobileMenu');
+        });
+
         $('#myCarousel').carousel({
             interval: false
         });
+
+
 
         $('.carousel .item').each(function () {
             var next = $(this).next();
@@ -84,7 +104,7 @@
     <div class="vl-footer-links">
         <div class="container">
             <div class="row">
-                <div class="col-md-2">
+                <div class="col-md-2 col-sm-2">
                     <?php
                     $defaults = array(
                         'menu'            => 'footer-1',

@@ -218,21 +218,64 @@ p {
   bottom: 0;
   right: 0;
   left: 0;
-  text-align: center; }
+  text-align: center;
+  display: none; }
+  .vl-mobile-menu .vl-times {
+    position: absolute;
+    top: 0;
+    right: 0; }
+    .vl-mobile-menu .vl-times:hover {
+      cursor: pointer; }
+    .vl-mobile-menu .vl-times div {
+      width: 20px;
+      height: 2px;
+      background-color: #fff;
+      transition: all .3s;
+      margin: 4px 0; }
   .vl-mobile-menu ul {
     position: absolute;
     left: 0;
-    right: 0; }
+    right: 0;
+    top: 50px; }
     .vl-mobile-menu ul li {
-      padding: 7px 0; }
+      padding: 7px 0;
+      opacity: 0;
+      transition: all .3s linear;
+      -moz-transition: all .3s linear;
+      -webkit-transition: all .3s linear;
+      transform: translate(0, 30px);
+      -webkit-transform: translate(0, 30px);
+      display: block; }
       .vl-mobile-menu ul li a {
         color: #fff;
         font-weight: 600;
         font-size: 30px;
-        transition: all .3s; }
+        transition: all .3s;
+        display: inline-block; }
         .vl-mobile-menu ul li a:hover {
           opacity: .5;
           transition: all .3s; }
+
+.showMobileMenu {
+  opacity: 1 !important;
+  transition: all .3s linear;
+  -moz-transition: all .3s linear;
+  -webkit-transition: all .3s linear;
+  transform: translate(0, 0px) !important;
+  -webkit-transform: translate(0, 0px) !important; }
+
+.vl-hamburger {
+  text-align: right;
+  display: inline-block;
+  margin-top: 16px; }
+  .vl-hamburger:hover {
+    cursor: pointer; }
+  .vl-hamburger div {
+    width: 20px;
+    height: 2px;
+    background-color: #e03a2c;
+    margin: 4px 0;
+    transition: all .3s; }
 
 .vl-logo-bar {
   padding: 50px 0;
@@ -264,6 +307,14 @@ p {
       padding: 9px 25px !important;
       display: inline-block;
       background-color: rgba(224, 58, 44, 0); }
+
+.vl-mobile-logo-bar {
+  padding: 20px 0;
+  z-index: 100;
+  position: fixed;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0);
+  box-shadow: 0px 3px 15px rgba(255, 255, 255, 0); }
 
 .vl-bg-cube-one {
   position: absolute;
