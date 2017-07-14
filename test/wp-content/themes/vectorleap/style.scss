@@ -169,6 +169,25 @@ a:hover {
   border-radius: 3px !important;
 }
 
+input {
+  &:focus {
+    outline: none !important;
+  }
+}
+
+::-webkit-input-placeholder {
+  color: #bcbcbc;
+}
+::-moz-placeholder {
+  color: #bcbcbc;
+}
+:-ms-input-placeholder {
+  color: #bcbcbc;
+}
+:-moz-placeholder {
+  color: #bcbcbc;
+}
+
 .btn-brand {
   background-color: $red !important;
   color: #fff;
@@ -178,23 +197,24 @@ a:hover {
   font-weight: 600 !important;
   transition: all .3s;
   &:hover {
-    -webkit-transform: translateY(2px);
-    transform: translateY(2px);
-    box-shadow: 0 5px 0 0 darken($red, 10%);
-    transition: all .3s;
+    //-webkit-transform: translateY(2px);
+    //transform: translateY(2px);
+    //box-shadow: 0 5px 0 0 darken($red, 10%);
+    //transition: all .3s;
     color: #fff !important;
   }
 }
 
 .btn-light {
   background-color: #fff !important;
-  border: 1px solid $red !important;
+  border: 2px solid $red !important;
   color: $red;
   padding: 9px 25px !important;
   font-size: 16px !important;
-  font-weight: 500 !important;
+  font-weight: 600 !important;
   &:hover {
     color: $red !important;
+    background-color: lighten($red, 10%);
   }
 }
 
@@ -413,7 +433,7 @@ p {
       }
     }
     .vl-contact-us {
-      border: 1px solid #fff;
+      border: 2px solid #fff;
       border-radius: 3px;
       color: #fff;
       font-size: 16px;
@@ -472,7 +492,7 @@ p {
   padding: 110px 0;
   h1 {
     margin-top: 0;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
     font-size: 41px;
     color: $head;
   }
@@ -553,6 +573,15 @@ p {
   .vl-clients-container {
     border-top:1px solid #e6e6e6;
     text-align: center;
+    .vl-client-logo {
+      width: 200px;
+      display: inline-block;
+      margin: 0 15px;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
   }
 }
 
@@ -579,14 +608,15 @@ footer {
         background-color: #f2f2f2;
         border: 0px;
         border-bottom: 3px solid #e6e6e6;
-        height: 40px;
-        line-height: 40px;
+        height: 43px;
+        line-height: 43px;
         font-size: 15px;
         border-top-left-radius: 3px;
         border-bottom-left-radius: 3px;
         width: 200px;
         max-width: 100%;
         padding: 0 15px;
+        vertical-align: top;
       }
       .vl-input-right {
         height: 40px;
@@ -594,6 +624,7 @@ footer {
         border-top-left-radius: 0 !important;
         border-bottom-left-radius: 0 !important;
         margin-left: -3px;
+        vertical-align: top;
       }
     }
   }
@@ -640,7 +671,7 @@ footer {
       text-align: center;
       width: 26px;
       height: 26px;
-      line-height: 26px;
+      line-height: 24px;
       display: inline-block;
       opacity: .6;
       transition: all .3s;
@@ -689,11 +720,24 @@ footer {
 }
 
 @media (max-width:1200px) and (min-width:992px) {
+  .vl-homepage-jumbotron {
+    .vl-mock-demo {
+      height: 450px;
+    }
+  }
+  .vl-bg-cube-one {
+    right: -478px;
+    top: -600px;
+    .vl-cube-one {
+
+    }
+  }
+
 }
 
 @media (min-width: 768px) {
   .container {
-    width: 100%;
+    width: 836px;
   }
 }
 
@@ -742,6 +786,7 @@ footer {
         height:auto;
         width: 100%;
         box-shadow: 0 0px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
+        margin-top: 30px;
       }
       h1 {
         font-size: 28px;

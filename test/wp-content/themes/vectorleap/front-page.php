@@ -168,29 +168,29 @@
 
                     <div class="vl-features-summary-single even row-flex row-flex-wrap">
 
-                        <div class="col-md-6">
+                        <div class="col-lg-6 col-md-4 col-sm-6">
                             <div class="vl-flex-container">
                                 <h2><?php echo get_post_meta($post->ID, 'caption', true); ?></h2>
                                 <h1><?php the_title(); ?></h1>
                                 <?php the_content(); ?>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-lg-6 col-md-8 col-sm-6">
                             <?php the_post_thumbnail(); ?>
                         </div>
                     </div>
 
                 <?php } else { ?>
                     <div class="vl-features-summary-single odd row-flex row-flex-wrap">
-                        <div class="col-md-6">
-                            <?php the_post_thumbnail(); ?>
-                        </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-md-push-6">
                             <div class="vl-flex-container">
                                 <h2><?php echo get_post_meta($post->ID, 'caption', true); ?></h2>
                                 <h1><?php the_title(); ?></h1>
                                 <?php the_content(); ?>
                             </div>
+                        </div>
+                        <div class="col-md-6 col-md-pull-6">
+                            <?php the_post_thumbnail(); ?>
                         </div>
                     </div>
 
@@ -203,25 +203,26 @@
 <div class="vl-clients">
     <div class="vl-clients-container container">
         <div class="row">
-            <div class="col-md-12">
-                <h2>Some of our happy customers</h2>
-                <?php
-                $query = new WP_Query(array(
-                    'post_type' => 'Clients',
-                    'posts_per_page' => 4
-                ));
-                $posts = $query->posts;
-                if ($query->have_posts()) {
-                    while ( $query->have_posts() ) : $query->the_post(); ?>
+            <h2>Some of our happy customers</h2>
+            <?php
+            $query = new WP_Query(array(
+                'post_type' => 'Clients',
+                'posts_per_page' => 4
+            ));
+            $posts = $query->posts;
+            if ($query->have_posts()) {
+                while ( $query->have_posts() ) : $query->the_post(); ?>
 
-                        <?php the_post_thumbnail(); ?>
-                    <?php endwhile; }?>
+            <div class="vl-client-logo">
+                <?php the_post_thumbnail(); ?>
             </div>
+            <?php endwhile; }?>
         </div>
     </div>
 </div>
 
-<div style="padding: 100px"></div>
+<div class="hidden-xs" style="padding: 70px"></div>
+<div class="visible-xs" style="padding: 60px"></div>
 
 </body>
 
