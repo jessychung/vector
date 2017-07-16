@@ -49,5 +49,27 @@ function my_custom_post_product() {
     );
     register_post_type( 'Clients', $args );
 
+    $args = array(
+        'label'        => 'Resources',
+        'description'   => 'resources',
+        'public'        => true,
+        'menu_position' => 5,
+        'taxonomies'    => array('post_tag'),
+        'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt', 'custom-fields' ),
+        'has_archive'   => true,
+    );
+    register_post_type( 'Resources', $args );
+
+    $args = array(
+        'label'        => 'CTA',
+        'description'   => 'ctas',
+        'public'        => true,
+        'menu_position' => 5,
+        'taxonomies'    => array('post_tag'),
+        'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt', 'custom-fields' ),
+        'has_archive'   => true,
+    );
+    register_post_type( 'CTA', $args );
+
 }
 add_action( 'init', 'my_custom_post_product' );
