@@ -47,8 +47,6 @@ a:hover {
   cursor: pointer;
 }
 
-
-
 .carousel {
   overflow: hidden;
 }
@@ -247,6 +245,16 @@ p {
   font-size: 16px;
 }
 
+#vl-particles {
+  position: fixed;
+  z-index: -1;
+  width: 100%;
+  top:0;
+  left:0;
+  right: 0;
+  bottom:0;
+}
+
 .vl-carousel-controls {
   width: 120px;
   position: relative;
@@ -433,6 +441,11 @@ p {
       li {
         display: inline-block;
         padding: 0 15px;
+        &.current-menu-item {
+          a {
+            border-bottom: 2px solid $red;
+          }
+        }
         a {
           color: #fff;
           font-size: 16px;
@@ -449,6 +462,31 @@ p {
       padding: 9px 25px !important;
       display: inline-block;
       background-color: rgba(224, 58, 44, 0);
+    }
+  }
+  .vl-interior-menu {
+    ul {
+      color: $head;
+      li {
+        display: inline-block;
+        padding: 0 15px;
+        a {
+          color: $head;
+          font-size: 16px;
+          font-weight: 600;
+        }
+      }
+    }
+    .vl-contact-us {
+      border: 2px solid $red;
+      box-shadow: 0 3px 0 0 darken($red, 10%);
+      border-radius: 3px;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 9px 25px !important;
+      display: inline-block;
+      background-color: $red;
     }
   }
 }
@@ -595,6 +633,40 @@ p {
   }
 }
 
+//interior one
+
+.vl-interior-jumbotron-one {
+  .container {
+    width: 1200px;
+    .row {
+      background-color: #f2f2f2;
+      padding: 100px 80px;
+      h1 {
+        margin-top: 0;
+        font-size: 41px;
+        margin-bottom: 20px;
+      }
+      p {
+        margin-bottom: 0;
+        color: $head;
+      }
+    }
+  }
+}
+
+.vl-interior-otherlinks {
+  margin-top: -80px;
+  .vl-interior-one-links {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
+    h1 {
+      font-size: 25px;
+      margin-top: 0;
+    }
+  }
+}
+
 //footer
 
 footer {
@@ -725,7 +797,7 @@ footer {
 
 @media (min-width: 1200px) {
   .container {
-    width: 1040px !important;
+    width: 1040px;
   }
 }
 
@@ -739,7 +811,9 @@ footer {
     right: -478px;
     top: -600px;
   }
-
+  .container {
+    width: 836px;
+  }
 }
 
 @media (max-width:992px) and (min-width:768px) {
@@ -750,9 +824,7 @@ footer {
 }
 
 @media (min-width: 768px) {
-  .container {
-    width: 836px;
-  }
+
 }
 
 @media (max-width: 768px) {
@@ -810,7 +882,7 @@ footer {
 }
 
 @media (max-width: 992px) {
-  .row-flex, .row-flex > div[class*='col-xs-'] {
-    display: block !important;
-  }
+  //.row-flex, .row-flex > div[class*='col-xs-'] {
+  //  display: block !important;
+  //}
 }

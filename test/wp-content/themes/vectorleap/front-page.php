@@ -1,6 +1,5 @@
 <?php get_header(); ?>
 
-
 <div class="vl-homepage-jumbotron">
     <div class="container">
         <div class="row-flex row-flex-wrap" style="position: relative">

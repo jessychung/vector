@@ -26,6 +26,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
@@ -54,6 +55,8 @@
 <!--        </div>-->
 <!--    </div>-->
 <!--</div>-->
+
+<div id="vl-particles"></div>
 
 <div class="vl-mobile-menu hidden-sm hidden-md hidden-lg">
     <div class="vl-times">
@@ -104,9 +107,14 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                <a href="<?php home_url()?>"><img id="animate4" src="<?php echo content_url (); ?>/uploads/2017/07/vl-logo.svg" width="230px" height="100%" style="margin-left: -5px"></a>
+                <a href="<?php echo get_site_url()?>"><img id="animate4" src="<?php echo content_url (); ?>/uploads/2017/07/vl-logo.svg" width="230px" height="100%" style="margin-left: -5px"></a>
             </div>
-            <div class="vl-main-menu-container col-lg-6 col-md-6 col-sm-6">
+
+            <?php if ( is_home() ) { ?>
+                <div class="vl-main-menu-container col-lg-6 col-md-6 col-sm-6">
+            <?php } else { ?>
+                <div class="vl-main-menu-container vl-interior-menu col-lg-6 col-md-6 col-sm-6">
+            <?php } ?>
 
                 <?php
                 $defaults = array(
@@ -128,7 +136,7 @@
     </div>
 </div>
 
-<div style="padding: 100px" class="hidden-xs"></div>
+<div style="padding: 86px" class="hidden-xs"></div>
 
 <script>
 
@@ -160,6 +168,12 @@
         duration: 150
     })
         .setTween("#animateM1", 1, {backgroundColor: "rgba(255, 255, 255, 1)", paddingTop: "10px", paddingBottom: "10px", color: "#333", boxShadow: "0px 3px 5px rgba(50, 50, 93, 0.1)"})
+        .addTo(controller);
+
+    var sceneParticles = new ScrollMagic.Scene({
+        duration: 700
+    })
+        .setTween("#vl-particles", 1, {opacity: '0'})
         .addTo(controller);
 </script>
 

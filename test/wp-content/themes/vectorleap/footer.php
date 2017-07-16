@@ -7,8 +7,12 @@
         $('.vl-loading').delay(1500).fadeOut(1000);
     });
 
-
     $(document).ready(function () {
+
+        particlesJS.load('vl-particles', '<?php echo content_url (); ?>/themes/vectorleap/particlesjs-config.json', function() {
+            console.log('callback - particles.js config loaded');
+        });
+
 
         $('.vl-hamburger').on('click', function () {
 
