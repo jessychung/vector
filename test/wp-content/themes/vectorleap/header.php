@@ -34,6 +34,9 @@
 
     <link href="<?php bloginfo('stylesheet_url');?>" rel="stylesheet">
 
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
     <?php if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
     <?php wp_head(); ?>
 </head>
@@ -42,20 +45,20 @@
 
 <!--loading icon-->
 
-<!--<div class="vl-loading">-->
-<!--    <div class="vl-loading-container">-->
-<!--        <div class="vl-ring">-->
-<!--            <object type="image/svg+xml" data="--><?php //echo content_url (); ?><!--/uploads/2017/07//vl_ring_animated.svg"  width="70px"></object>-->
-<!--        </div>-->
-<!--        <div class="vl-logo-animation">-->
-<!--            <img class="vl-logo-piece animated" src="--><?php //echo content_url (); ?><!--/uploads/2017/07/vl_five-01.svg" width="50px">-->
-<!--            <img class="vl-logo-piece animated" src="--><?php //echo content_url (); ?><!--/uploads/2017/07/vl_four-01.svg" width="50px">-->
-<!--            <img class="vl-logo-piece animated" src="--><?php //echo content_url (); ?><!--/uploads/2017/07/vl_three-01.svg" width="50px">-->
-<!--            <img class="vl-logo-piece animated" src="--><?php //echo content_url (); ?><!--/uploads/2017/07/vl_two-01.svg" width="50px">-->
-<!--            <img class="vl-logo-piece animated" src="--><?php //echo content_url (); ?><!--/uploads/2017/07/vl_one-01.svg" width="50px">-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
+<div class="vl-loading">
+    <div class="vl-loading-container">
+        <div class="vl-ring">
+            <object type="image/svg+xml" data="<?php echo content_url (); ?>/uploads/2017/07//vl_ring_animated.svg"  width="70px"></object>
+        </div>
+        <div class="vl-logo-animation">
+            <img class="vl-logo-piece animated" src="<?php echo content_url (); ?>/uploads/2017/07/vl_five-01.svg" width="50px">
+            <img class="vl-logo-piece animated" src="<?php echo content_url (); ?>/uploads/2017/07/vl_four-01.svg" width="50px">
+            <img class="vl-logo-piece animated" src="<?php echo content_url (); ?>/uploads/2017/07/vl_three-01.svg" width="50px">
+            <img class="vl-logo-piece animated" src="<?php echo content_url (); ?>/uploads/2017/07/vl_two-01.svg" width="50px">
+            <img class="vl-logo-piece animated" src="<?php echo content_url (); ?>/uploads/2017/07/vl_one-01.svg" width="50px">
+        </div>
+    </div>
+</div>
 
 <?php if ( is_home() ) { ?>
     <div id="vl-particles"></div>
