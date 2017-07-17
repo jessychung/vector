@@ -71,5 +71,16 @@ function my_custom_post_product() {
     );
     register_post_type( 'CTA', $args );
 
+    $args = array(
+        'label'        => 'Data-modelling',
+        'description'   => 'vectorleap features',
+        'public'        => true,
+        'menu_position' => 5,
+        'taxonomies'    => array('post_tag'),
+        'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt', 'custom-fields' ),
+        'has_archive'   => true,
+    );
+    register_post_type( 'Data-modelling', $args );
+
 }
 add_action( 'init', 'my_custom_post_product' );

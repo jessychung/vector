@@ -633,7 +633,7 @@ p {
   }
 }
 
-//interior one
+//interior
 
 .vl-interior-jumbotron-one {
   .container {
@@ -657,6 +657,29 @@ p {
   }
 }
 
+.vl-interior-jumbotron-two {
+  .container {
+    width: 1200px;
+    .row {
+      background-color: #f2f2f2;
+      padding: 100px 80px;
+      background-repeat: no-repeat !important;
+      background-position: center !important;
+      background-size: cover !important;
+      h1 {
+        margin-top: 0;
+        font-size: 41px;
+        margin-bottom: 20px;
+        color: #fff;
+      }
+      p {
+        margin-bottom: 0;
+        color: #fff;
+      }
+    }
+  }
+}
+
 .vl-interior-otherlinks {
   margin-top: -50px;
   .vl-interior-one-links {
@@ -671,6 +694,35 @@ p {
       color: $red;
       font-weight: 600;
       font-size: 17px;
+    }
+  }
+  .vl-interior-two-links {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
+    h1 {
+      font-size: 25px;
+      margin-top: 20px;
+    }
+    a {
+      color: $red;
+      font-weight: 600;
+      font-size: 17px;
+    }
+    .vl-other-children {
+      display: inline-block;
+      text-align: center;
+      transition: all .3s;
+      padding: 15px;
+      &:hover {
+        background-color: #f2f2f2;
+        transition: all .3s;
+        cursor: pointer;
+      }
+      h1 {
+        font-size: 17px;
+        margin: 0;
+      }
     }
   }
 }
@@ -712,6 +764,57 @@ p {
       color: $red;
       font-weight: 600;
       font-size: 17px;
+    }
+  }
+  .vl-interior-feature-title {
+    p {
+      font-family: "proxima-nova", sans-serif !important;
+      color: $grey !important;
+      text-transform: uppercase;
+      font-weight: 700 !important;
+      font-size: 13px !important;
+    }
+  }
+  .vl-interior-feature-title {
+    margin: 50px 0;
+    h1 {
+      font-size: 32px;
+      margin-top: 0;
+    }
+  }
+  .vl-feature-list {
+    margin-bottom: 20px;
+    h1 {
+      font-size: 23px;
+      margin-top: 0;
+      span {
+        color: $red;
+        font-weight: 700;
+        padding-right: 15px;
+      }
+    }
+    p {
+      border-left: 1px solid $red;
+      padding-left: 25px;
+      margin-left: 5px;
+    }
+    .vl-code {
+      background-color: #f4f4f4;
+      pre {
+        border: 0;
+      }
+      p {
+        border-left: 0;
+        margin-left: 0;
+        white-space: pre;
+        line-height: 13px;
+        padding: 25px;
+        font-family: 'Roboto Mono', monospace;
+        color: $head;
+        font-size: 11px;
+        font-weight: 500;
+        margin-top: 30px;
+      }
     }
   }
 }
@@ -888,7 +991,7 @@ footer {
 
 @media (max-width:992px) and (min-width:768px) {
   .vl-bg-cube-one {
-    right: -478px;
+    right: -536px;
     top: -600px;
   }
   .vl-interior-one-links {
@@ -962,7 +1065,20 @@ footer {
 
   .vl-interior-jumbotron-one .container {
     width: initial;
+    .row {
+      padding: 50px 15px 100px 15px;
+      background-image: none;
+    }
   }
+
+  .vl-interior-jumbotron-two .container {
+    width: initial;
+    .row {
+      padding: 50px 15px 100px 15px;
+      background-image: none;
+    }
+  }
+
   .vl-interior-otherlinks {
     .vl-interior-one-links {
       margin-bottom: 30px;

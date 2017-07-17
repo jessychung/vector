@@ -125,6 +125,7 @@ if ($query->have_posts()) {
                             <h1><?php the_title(); ?></h1>
                             <?php the_content(); ?>
                             <a href="<?php the_permalink(); ?>">Learn more <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+                            <div style="padding: 30px" class="visible-xs"></div>
                         <?php } ?>
                     <?php endwhile; }?>
             </div>
@@ -140,6 +141,7 @@ if ($query->have_posts()) {
                             <h1><?php the_title(); ?></h1>
                             <?php the_content(); ?>
                             <a href="<?php the_permalink(); ?>">Learn more <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+                            <div style="padding: 30px" class="visible-xs"></div>
                         <?php } ?>
                     <?php endwhile; }?>
             </div>

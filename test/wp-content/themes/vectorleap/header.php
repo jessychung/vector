@@ -12,6 +12,7 @@
     <link rel="profile" href="http://gmpg.org/xfn/11" />
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
     <link href="https://fonts.googleapis.com/css?family=Cabin:500,600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:500" rel="stylesheet">
     <link rel='shortcut icon' href='<?php echo content_url (); ?>/uploads/2017/07/VectorLeap_fav.png'>
 
     <!--Typekit-->
@@ -37,7 +38,7 @@
     <?php wp_head(); ?>
 </head>
 
-<body class="stop-scrolling">
+<body>
 
 <!--loading icon-->
 
@@ -56,7 +57,9 @@
 <!--    </div>-->
 <!--</div>-->
 
-<div id="vl-particles"></div>
+<?php if ( is_home() ) { ?>
+    <div id="vl-particles"></div>
+<?php } ?>
 
 <div class="vl-mobile-menu hidden-sm hidden-md hidden-lg">
     <div class="vl-times">
